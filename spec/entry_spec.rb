@@ -4,6 +4,12 @@ RSpec.describe Entry do
   describe "attributes" do
     let(:entry) { Entry.new('Ada Lovelace', '010.012.1815', 'augusta.king@lovelace.com') }
 
+    describe "find_by" do
+      it "finds things by attribute and value" do
+        Entry.find_by("name", "Ada Lovelace")
+      end
+    end
+
     it "responds to name" do
       expect(entry).to respond_to(:name)
     end
@@ -37,4 +43,3 @@ RSpec.describe Entry do
     end
   end
 end
-
